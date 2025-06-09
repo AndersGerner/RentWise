@@ -5,9 +5,11 @@ import { Stack } from "expo-router";
 import { AuthProvider } from "@/context/supabase-provider";
 import { QueryProvider } from "@/context/query-provider";
 import { useColorScheme } from "@/lib/useColorScheme";
-import { colors } from "@/constants/colors";
+import { colors } from "@/constants/colors"
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 
 export default function AppLayout() {
+  useFrameworkReady();
 	const { colorScheme } = useColorScheme();
 
 	return (
